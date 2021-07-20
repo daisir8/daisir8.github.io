@@ -1,312 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>樱花苑208翻牌小游戏</title>
+<link href="css/layout.css" type="text/css" rel="stylesheet" />
+<link href="css/findpair.css" type="text/css" rel="stylesheet" />
+<script src="js/findpair.js" type="text/javascript"></script>
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.1.1"></head>
+<!--弹层插件-->
+<link href="css/xtiper.css" type="text/css" rel="stylesheet" />
+<script src="js/xtiper.js" type="text/javascript"></script>
+</head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-如何搭建自己的博客！！！！" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/28/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-08-28T12:30:17.592Z" itemprop="datePublished">2020-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="title-基于hexo在windows下建立个人博客"><a href="#title-基于hexo在windows下建立个人博客" class="headerlink" title="title:基于hexo在windows下建立个人博客"></a>title:基于hexo在windows下建立个人博客</h2><p>博客是继MSN、BBS、ICQ之后出现的第4种网络交流方式，现已受到大家的欢迎，是网络时代的个人“读者文摘”，<br>是以超级链接为入口的网络日记，它代表着新的生活、工作和学习方式。<br>MSN（信息门户网站）,BBS（网络论坛），ICQ（即时通讯软件）</p>
-<hr>
-<p>#整体思路哦哦哦：我们的目的是制作一个博客，用于网络交流，分享自己的想法，发表自己的文章。肯定少不了别人通过网络访问<br>你，你需要在本地拥有一个博客文件，然后再推送它到远端，这样人们就可以来访问了。</p>
-<p>##第一步：<strong>下载Node.js</strong></p>
-<p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js下载地址</a></p>
-<p>下载LTS版（长期支持版）</p>
-<p>##第二步：<strong>下载hexo</strong></p>
-<p>win+r      输入cmd打开终端</p>
-<p>输入npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org,安装镜像包/">https://registry.npm.taobao.org，安装镜像包</a></p>
-<blockquote>
-<p>（这一步的操作是为了下载hexo快一点）</p>
-</blockquote>
-<p>输入cnpm install -g hexo-cli 安装hexo</p>
-<p>##第三步：<strong>下载git</strong></p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git下载地址</a></p>
-<p>同时在cmd中安装git插件：cnpm install –save hexo-deployer-git</p>
-<p>##第四步：准备工作做得差不多了，现在开始建立本地博客文件夹</p>
-<p>终端（cmd）中在d盘建立blog文件夹（在cmd中 输入 mkdir  blog），然后进入文件夹（在cmd中输入cd blog），<br>准备工作完成之后的第一步操作：hexo init（初始化hexo）</p>
-<p>第二步：输入hexo s（启动hexo）<br>这个时候cmd中会蹦出一个localhost：4000，你输入到浏览器中就可访问了，不过你一退出这个hexo s 就无法访问了</p>
-<p>你就能看到一个最初版的hexo</p>
-<p>第三步：我们肯定不能用初始化的东西，cmd 中输入<em>hexo n  “你新文章的名字”</em>，新建文章，hexo n命令生成的新文件一般都在blog文件夹下的<br>source/_posts/，所以我们要cd它们一下再次进入，然后notepad 新文章的文件名或者vim  新文章的文件名，对文章进行编辑。（我有一个更好的办法<br>根本不需要在cmd中操作，直接打开文件夹，用记事本打开，然后按照Markdown的格式改写就好了），然后保存退出。</p>
-<p>第四步：然后就是推送它到远端了，退回到刚刚的blog目录，cd  …/…<br>此时notepad一下_config.yml这个文件，也就是编辑一下这个文件，改动一下你这个本地博客文件夹推送到远端的方式<br>我们这里用git（因为git不要钱哈哈，不然你租个服务器，随着时光的流动，钱也就溜走了。）</p>
-<p>具体操作：notepad一下_config.yml这个文件之后，往下翻，看到了一个deployment（配置的意思），下面有个<br>type:”   此刻把引号删掉，改成type:  git，因为我们要用git嘛，记得冒号之后打空格，别连起来。<br>下面再加<br>repo：输入你在github中新建仓库的网址（有关git的知识我会在后面讲）<br>branch：master</p>
-<p>然后推送它到远端三步走：hexo clean——hexo g——hexo d</p>
-<p>有时候会出现一个tell me who you are 的错误，这是因为你的git没有登录，此时输入</p>
-<p>git  config  –global  user.name  github里的昵称<br>git  config  –global  user.email  github里的昵称@github.com</p>
-<p>然后它会出现一个让你登录github的界面，登录就好了</p>
-<p>然后在浏览器中输入你在github中新建仓库的网址（一般是仓库名+github.io），就可以登录看你的博客了，不仅你可以看，别人也可以哦。</p>
-<p>更换博客主题我略讲一下</p>
-<p>cmd 中git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
-<p>克隆好后修改_config.yml</p>
-<p>theme：那一栏改为yilia</p>
-<p> 然后就是老三步：hexo clean ——hexo g ——hexo d</p>
-<p>在浏览器中输入你在github中新建仓库的网址（一般是仓库名+github.io），就可以登录看你的博客了</p>
-<p>‘’’<br>git小知识<br>git是一种分布式版本控制系统，我的理解为分布式项目管理系统，开发者可以通过git clone 在<br>本地机器上拷贝一个完整的git仓库（通过git clone 获得别人的项目，就像你上面用别人制作的yilia主题一样）<br>而你可以通过git，可以管理的你项目，放置不同的版本的项目，以后能用的着。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/28/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" data-id="ckeea0afb000150tw8t28b6yq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+<table class="ftable">
+  <tr><td><div id="fbox"></div></td></tr>
+</table>
 
+<div class="fbox_btn fbox_btn1">
+  <div class="outdiv">游戏规则：翻开两个格子，如果图案一致则配对，将其挑出，如果图案不一致则盖回去，直到所有格子都配对完成，游戏结束。</div>
+</div>
 
-  
-    <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-08-27T14:29:54.000Z" itemprop="datePublished">2020-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">简介</a>
-    </h1>
-  
+<div class="fbox_btn fbox_btn2">  
+  <div id="output"></div>
+  <select id="hard" class="hard_select" onchange="changehard()">
+    <option value="0">--选择难度--</option>
+    <option value="debug">debug 模式</option>
+    <option value="1">难度1: 4x4</option>
+    <option value="2">难度2: 6x6</option>
+    <option value="3">难度3: 8x8</option>
+    <option value="4">难度4: 10x10</option>
+  </select>
+  <div><button onclick="changehard()">新游戏</button></div>
+</div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是一个我刚刚发现的好东西，就是一个不需要服务器就可以展示信息的网站，我可以在这上面用本地机（我的笔记本电脑）<br>来任意编辑，然后可以由任何地方的人联网访问，这个东西很简单，唯一一个优越的地方就是不需要自己租服务器，想想看，<br>我这玩意就是一个今日头条或知乎之类的东西，只不过我的这玩意没人访问，假如有很多人访问的话，不就是类似于一个信息门户嘛</p>
-<hr>
+<script>
+//初始化
+fbox = new Findpair('fbox','output');
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckeea0ahw000250tw4bxgfzvi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+//开始游戏
+fbox.newgame();
 
+//选择难度
+function changehard(obj)
+{
+  obj = document.getElementById("hard");
+  var index = obj.selectedIndex; // 选中索引
+  var result = obj.options[index].value; // 选中值
+  if(result==0){
+    result = fbox.hard ? fbox.hard : 1;
+  }
 
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/27/hello-world/" class="article-date">
-  <time datetime="2020-08-27T14:19:06.160Z" itemprop="datePublished">2020-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/27/hello-world/">网易云热评</a>
-    </h1>
-  
+  if(result){
+    //修改难度
+    fbox.set({
+      hard: result,
+    });
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>听过最撩人的一句话“我之前没有爱过别人，你是第一个，我怕我做的不好，让你觉得爱情不过如此。”</p>
-<h2 id="——《东西》"><a href="#——《东西》" class="headerlink" title="——《东西》"></a>——《东西》</h2><p>###王聪伟</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">所有大张旗鼓的离开其实都是试探，</span><br><span class="line">真正的离开是没有告别的，</span><br><span class="line">真正想要离开的人，</span><br><span class="line">只是挑了一个风和日丽的早晨，</span><br><span class="line">裹了一件最常穿的大衣，</span><br><span class="line">悄悄地关上门然后再也没有回来。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    //开始游戏
+    fbox.newgame();
+  }
+}
+</script>
+<div style="text-align:center;">
+<p></p>
+</div>
 
-
-
-<h3 id="戴贵仁"><a href="#戴贵仁" class="headerlink" title="戴贵仁"></a>戴贵仁</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">心事这东西，如果捂着嘴，它就会从眼睛里面跑出来。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="严亮亮"><a href="#严亮亮" class="headerlink" title="严亮亮"></a>严亮亮</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">孟婆，再来一碗”“小伙，你已经喝了好几碗了!”“可她还在”</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="姚于鼎"><a href="#姚于鼎" class="headerlink" title="姚于鼎"></a>姚于鼎</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">别看我眼睛 不然我的喜欢就藏不住了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="刘申奥"><a href="#刘申奥" class="headerlink" title="刘申奥"></a>刘申奥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一个女孩有纹身说明什么性格开朗还是有故事？<span class="string">&quot;</span></span><br><span class="line"><span class="string">‘说明你有偏见’</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="葛文龙"><a href="#葛文龙" class="headerlink" title="葛文龙"></a>葛文龙</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">我喜欢吃草莓，草莓汁不行，草莓蛋糕不行，不是草莓不行。</span><br><span class="line">我喜欢你，长得像你不行，性格像你不行，不是你不行</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/27/hello-world/" data-id="ckeea0af3000050tw3s8u1fbt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/28/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">简介</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/27/hello-world/">网易云热评</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
 </body>
 </html>
