@@ -1,54 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='一、谈一下这个blog的起源 搭建自己的私人博客的想法源自于这样一件事：
-前几天参加我们学校自己举办的CTF网络安全挑战赛，感受到了hacker的快乐，也发现了一些牛人。其中有一个人让我特别有感受。他是一名专转本的学生，但是思想很丰富，态度很端正，我有时都在想这么厉害的人怎么会读专科，江苏的竞争实在是激烈。
-他有一个私人博客，界面很美观，不花里胡哨，信息流很简单明了，我这个博客的主题的选取思路也源自于他的博客。他的博客有他的定期感想，有他的捯饬技术和项目的记录，还有个人理财的理解。尤其是个人理财，他说了这样一句话：”我已经成年了，要开始理财了。“
-而我成年许久，却丝毫没有这方面的意识，可见我的思想之浅薄。故我想在这个博客上倾倒自己所有的知识，宣泄自己所有的感想。
-不得不说，有些人的认知和思维就是很棒，他们有意识地朝着那个正确且高尚的方向去，而我需要做的，就是向他们学习，培养自己的思维和认知。
-二、对这个blog的看法 这是基于hugo开发的一个博客。
-为什么用hugo呢？因为hugo是最快最快全世界最快的静态博客工具。
-这个blog的优点：
- 因为是静态博客，可以免费永久地放到GitHub上运行访问，不必买服务器即可进入我的博客 加载资源超级超级快 文章根据markdown格式，写完之后自己生成目录 每篇文章可以自己设置种类、关键词、标签等  我打算怎么用它：
- 直接在content/post/myblog的文件夹下新建md文件，在里面写文章即可 用下面的语句生成html文件，放入GitHub中远程访问。  1  hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;https://daisir8.github.io/&amp;#34;   三、最后的blog使用优化 我还是打算用
-1  hugo new post/myblog/01_xxxx.md   这样的语句来创建文章，因为文章有初始信息要生成。
-而且xxxx处直接写文章名字，01就是blog序号，写到99再说。
-而且我打算除了第一个博客，以后的博客都不加封面图片，以求最快的速度加载资源。'><title>01_我的第一个博客</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='一、安装hugo Windows 安装，前往 https://github.com/gohugoio/hugo/releases 页面，下载hugo_X.XX_Windows-64bit.zip 或者 hugo_X.XX_Windows-32bit。
+这里我建议下载extension版本的，即扩展版，因为后来我看中一个我很喜欢的hugo主题，叫stack，它只能扩展版才能安装。
+然后解压得到hugo.exe，把这玩意放进你的本地建站目录中。比如H:\Hugo。然后打开cmd命令行进入这个目录，输入hugo version查看版本。
+不报错即安装好了。
+二、hugo建站 建立一个名为myblog的网站： 1  hugo new site myblog   然后就生成了一个myblog网站文件夹，里面大多数是空的。
+|- archetypes ：存放default.md，头文件格式
+|- content ：content目录存放博客文章（.markdown/.md文件）
+|- data ：存放自定义模版，导入的toml文件（或json，yaml）
+|- layouts ：layouts目录存放的是网站的模板文件
+|- static ：static目录存放js/css/img等静态资源
+|- config.toml ：config.toml是网站的配置文件
+当前网站是没有任何内容的，需要下载个主题跑起来才有内容。
+然后去官网手动下载主题： Hugo官方主题：https://themes.gohugo.io/
+下载好之后解压到themes文件夹中。
+然后把主题文件夹的archetypes文件夹复制覆盖到自己的建站文件夹中。
+将exampleSite文件夹中的content文件夹和config.yaml复制覆盖到自己的建
+站文件夹中。
+三、启动 1  hugo server   四、添加评论功能 stack自带的disqus在国内用不了。
+LeanCloud是针对移动应用的一站式云端服务
+提供以下服务：
+ 云引擎服务，加速解析网页内容，比如在线视频网站 即时通讯 多人在线游戏对战 数据存储 信息推送  即可以通过这就做出以上自己感兴趣的东西。
+我这次做的是即时通讯模块的实时评论。
+vercel是一家提供静态网站托管的云平台
+即快速的的Github Page，有点像大众那些免费建站的，只要放html进去就行的无脑建站软件。'><title>03_我的hugo搭建流程</title>
 
-<link rel='canonical' href='https://daisir8.github.io/p/01_%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/'>
+<link rel='canonical' href='https://daisir8.github.io/p/03_%E6%88%91%E7%9A%84hugo%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/'>
 
-<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='01_我的第一个博客'>
-<meta property='og:description' content='一、谈一下这个blog的起源 搭建自己的私人博客的想法源自于这样一件事：
-前几天参加我们学校自己举办的CTF网络安全挑战赛，感受到了hacker的快乐，也发现了一些牛人。其中有一个人让我特别有感受。他是一名专转本的学生，但是思想很丰富，态度很端正，我有时都在想这么厉害的人怎么会读专科，江苏的竞争实在是激烈。
-他有一个私人博客，界面很美观，不花里胡哨，信息流很简单明了，我这个博客的主题的选取思路也源自于他的博客。他的博客有他的定期感想，有他的捯饬技术和项目的记录，还有个人理财的理解。尤其是个人理财，他说了这样一句话：”我已经成年了，要开始理财了。“
-而我成年许久，却丝毫没有这方面的意识，可见我的思想之浅薄。故我想在这个博客上倾倒自己所有的知识，宣泄自己所有的感想。
-不得不说，有些人的认知和思维就是很棒，他们有意识地朝着那个正确且高尚的方向去，而我需要做的，就是向他们学习，培养自己的思维和认知。
-二、对这个blog的看法 这是基于hugo开发的一个博客。
-为什么用hugo呢？因为hugo是最快最快全世界最快的静态博客工具。
-这个blog的优点：
- 因为是静态博客，可以免费永久地放到GitHub上运行访问，不必买服务器即可进入我的博客 加载资源超级超级快 文章根据markdown格式，写完之后自己生成目录 每篇文章可以自己设置种类、关键词、标签等  我打算怎么用它：
- 直接在content/post/myblog的文件夹下新建md文件，在里面写文章即可 用下面的语句生成html文件，放入GitHub中远程访问。  1  hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;https://daisir8.github.io/&amp;#34;   三、最后的blog使用优化 我还是打算用
-1  hugo new post/myblog/01_xxxx.md   这样的语句来创建文章，因为文章有初始信息要生成。
-而且xxxx处直接写文章名字，01就是blog序号，写到99再说。
-而且我打算除了第一个博客，以后的博客都不加封面图片，以求最快的速度加载资源。'>
-<meta property='og:url' content='https://daisir8.github.io/p/01_%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/'>
+<link rel="stylesheet" href="/scss/style.min.b80bf249ce4a22cf55e8d7340a0b37a2f2c10f54f3a9a49cb94b694a2eb0bbea.css"><meta property='og:title' content='03_我的hugo搭建流程'>
+<meta property='og:description' content='一、安装hugo Windows 安装，前往 https://github.com/gohugoio/hugo/releases 页面，下载hugo_X.XX_Windows-64bit.zip 或者 hugo_X.XX_Windows-32bit。
+这里我建议下载extension版本的，即扩展版，因为后来我看中一个我很喜欢的hugo主题，叫stack，它只能扩展版才能安装。
+然后解压得到hugo.exe，把这玩意放进你的本地建站目录中。比如H:\Hugo。然后打开cmd命令行进入这个目录，输入hugo version查看版本。
+不报错即安装好了。
+二、hugo建站 建立一个名为myblog的网站： 1  hugo new site myblog   然后就生成了一个myblog网站文件夹，里面大多数是空的。
+|- archetypes ：存放default.md，头文件格式
+|- content ：content目录存放博客文章（.markdown/.md文件）
+|- data ：存放自定义模版，导入的toml文件（或json，yaml）
+|- layouts ：layouts目录存放的是网站的模板文件
+|- static ：static目录存放js/css/img等静态资源
+|- config.toml ：config.toml是网站的配置文件
+当前网站是没有任何内容的，需要下载个主题跑起来才有内容。
+然后去官网手动下载主题： Hugo官方主题：https://themes.gohugo.io/
+下载好之后解压到themes文件夹中。
+然后把主题文件夹的archetypes文件夹复制覆盖到自己的建站文件夹中。
+将exampleSite文件夹中的content文件夹和config.yaml复制覆盖到自己的建
+站文件夹中。
+三、启动 1  hugo server   四、添加评论功能 stack自带的disqus在国内用不了。
+LeanCloud是针对移动应用的一站式云端服务
+提供以下服务：
+ 云引擎服务，加速解析网页内容，比如在线视频网站 即时通讯 多人在线游戏对战 数据存储 信息推送  即可以通过这就做出以上自己感兴趣的东西。
+我这次做的是即时通讯模块的实时评论。
+vercel是一家提供静态网站托管的云平台
+即快速的的Github Page，有点像大众那些免费建站的，只要放html进去就行的无脑建站软件。'>
+<meta property='og:url' content='https://daisir8.github.io/p/03_%E6%88%91%E7%9A%84hugo%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/'>
 <meta property='og:site_name' content='Dai Gang King'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='感想' /><meta property='article:published_time' content='2022-04-14T20:22:20&#43;08:00'/><meta property='article:modified_time' content='2022-04-14T20:22:20&#43;08:00'/><meta property='og:image' content='https://api.dujin.org/bing/1366.php' />
-<meta name="twitter:title" content="01_我的第一个博客">
-<meta name="twitter:description" content="一、谈一下这个blog的起源 搭建自己的私人博客的想法源自于这样一件事：
-前几天参加我们学校自己举办的CTF网络安全挑战赛，感受到了hacker的快乐，也发现了一些牛人。其中有一个人让我特别有感受。他是一名专转本的学生，但是思想很丰富，态度很端正，我有时都在想这么厉害的人怎么会读专科，江苏的竞争实在是激烈。
-他有一个私人博客，界面很美观，不花里胡哨，信息流很简单明了，我这个博客的主题的选取思路也源自于他的博客。他的博客有他的定期感想，有他的捯饬技术和项目的记录，还有个人理财的理解。尤其是个人理财，他说了这样一句话：”我已经成年了，要开始理财了。“
-而我成年许久，却丝毫没有这方面的意识，可见我的思想之浅薄。故我想在这个博客上倾倒自己所有的知识，宣泄自己所有的感想。
-不得不说，有些人的认知和思维就是很棒，他们有意识地朝着那个正确且高尚的方向去，而我需要做的，就是向他们学习，培养自己的思维和认知。
-二、对这个blog的看法 这是基于hugo开发的一个博客。
-为什么用hugo呢？因为hugo是最快最快全世界最快的静态博客工具。
-这个blog的优点：
- 因为是静态博客，可以免费永久地放到GitHub上运行访问，不必买服务器即可进入我的博客 加载资源超级超级快 文章根据markdown格式，写完之后自己生成目录 每篇文章可以自己设置种类、关键词、标签等  我打算怎么用它：
- 直接在content/post/myblog的文件夹下新建md文件，在里面写文章即可 用下面的语句生成html文件，放入GitHub中远程访问。  1  hugo --theme=hugo-theme-stack --baseUrl=&amp;#34;https://daisir8.github.io/&amp;#34;   三、最后的blog使用优化 我还是打算用
-1  hugo new post/myblog/01_xxxx.md   这样的语句来创建文章，因为文章有初始信息要生成。
-而且xxxx处直接写文章名字，01就是blog序号，写到99再说。
-而且我打算除了第一个博客，以后的博客都不加封面图片，以求最快的速度加载资源。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://api.dujin.org/bing/1366.php' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='技术' /><meta property='article:published_time' content='2022-04-15T08:16:04&#43;08:00'/><meta property='article:modified_time' content='2022-04-15T08:16:04&#43;08:00'/>
+<meta name="twitter:title" content="03_我的hugo搭建流程">
+<meta name="twitter:description" content="一、安装hugo Windows 安装，前往 https://github.com/gohugoio/hugo/releases 页面，下载hugo_X.XX_Windows-64bit.zip 或者 hugo_X.XX_Windows-32bit。
+这里我建议下载extension版本的，即扩展版，因为后来我看中一个我很喜欢的hugo主题，叫stack，它只能扩展版才能安装。
+然后解压得到hugo.exe，把这玩意放进你的本地建站目录中。比如H:\Hugo。然后打开cmd命令行进入这个目录，输入hugo version查看版本。
+不报错即安装好了。
+二、hugo建站 建立一个名为myblog的网站： 1  hugo new site myblog   然后就生成了一个myblog网站文件夹，里面大多数是空的。
+|- archetypes ：存放default.md，头文件格式
+|- content ：content目录存放博客文章（.markdown/.md文件）
+|- data ：存放自定义模版，导入的toml文件（或json，yaml）
+|- layouts ：layouts目录存放的是网站的模板文件
+|- static ：static目录存放js/css/img等静态资源
+|- config.toml ：config.toml是网站的配置文件
+当前网站是没有任何内容的，需要下载个主题跑起来才有内容。
+然后去官网手动下载主题： Hugo官方主题：https://themes.gohugo.io/
+下载好之后解压到themes文件夹中。
+然后把主题文件夹的archetypes文件夹复制覆盖到自己的建站文件夹中。
+将exampleSite文件夹中的content文件夹和config.yaml复制覆盖到自己的建
+站文件夹中。
+三、启动 1  hugo server   四、添加评论功能 stack自带的disqus在国内用不了。
+LeanCloud是针对移动应用的一站式云端服务
+提供以下服务：
+ 云引擎服务，加速解析网页内容，比如在线视频网站 即时通讯 多人在线游戏对战 数据存储 信息推送  即可以通过这就做出以上自己感兴趣的东西。
+我这次做的是即时通讯模块的实时评论。
+vercel是一家提供静态网站托管的云平台
+即快速的的Github Page，有点像大众那些免费建站的，只要放html进去就行的无脑建站软件。">
     </head>
     <body class="
     article-page
@@ -296,23 +328,15 @@
     </ol>
 </aside>
 <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/01_%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">
-                
-                    <img src="https://api.dujin.org/bing/1366.php" loading="lazy" alt="Featured image of post 01_我的第一个博客" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
     <header class="article-category">
         
-            <a href="/categories/%E6%84%9F%E6%83%B3/" >
-                感想
+            <a href="/categories/%E6%8A%80%E6%9C%AF/" >
+                技术
             </a>
         
     </header>
@@ -320,7 +344,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/01_%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">01_我的第一个博客</a>
+            <a href="/p/03_%E6%88%91%E7%9A%84hugo%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">03_我的hugo搭建流程</a>
         </h2>
     
         
@@ -339,7 +363,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 14, 2022</time>
+                <time class="article-time--published">Apr 15, 2022</time>
             </div>
         
 
@@ -368,48 +392,176 @@
     <section class="article-content">
     
     
-    <h2 id="一谈一下这个blog的起源">一、谈一下这个blog的起源</h2>
-<p>搭建自己的私人博客的想法源自于这样一件事：</p>
-<p>前几天参加我们学校自己举办的CTF网络安全挑战赛，感受到了hacker的快乐，也发现了一些牛人。其中有一个人让我特别有感受。他是一名专转本的学生，但是思想很丰富，态度很端正，我有时都在想这么厉害的人怎么会读专科，江苏的竞争实在是激烈。</p>
-<p>他有一个私人博客，界面很美观，不花里胡哨，信息流很简单明了，我这个博客的主题的选取思路也源自于他的博客。他的博客有他的定期感想，有他的捯饬技术和项目的记录，还有个人理财的理解。尤其是个人理财，他说了这样一句话：”我已经成年了，要开始理财了。“</p>
-<p>而我成年许久，却丝毫没有这方面的意识，可见我的思想之浅薄。故我想在这个博客上倾倒自己所有的知识，宣泄自己所有的感想。</p>
-<p><strong>不得不说，有些人的认知和思维就是很棒，他们有意识地朝着那个正确且高尚的方向去，而我需要做的，就是向他们学习，培养自己的思维和认知。</strong></p>
-<h2 id="二对这个blog的看法">二、对这个blog的看法</h2>
-<p>这是基于hugo开发的一个博客。</p>
-<p>为什么用hugo呢？因为hugo是最快最快全世界最快的静态博客工具。</p>
-<p>这个blog的优点：</p>
-<ul>
-<li>因为是静态博客，可以免费永久地放到GitHub上运行访问，不必买服务器即可进入我的博客</li>
-<li>加载资源超级超级快</li>
-<li>文章根据markdown格式，写完之后自己生成目录</li>
-<li>每篇文章可以自己设置种类、关键词、标签等</li>
-</ul>
-<p>我打算怎么用它：</p>
-<ul>
-<li>直接在content/post/myblog的文件夹下新建md文件，在里面写文章即可</li>
-<li>用下面的语句生成html文件，放入GitHub中远程访问。</li>
-</ul>
+    <h2 id="一安装hugo">一、安装hugo</h2>
+<p>Windows 安装，前往 <a class="link" href="https://github.com/gohugoio/hugo/releases"  target="_blank" rel="noopener"
+    >https://github.com/gohugoio/hugo/releases</a> 页面，下载hugo_X.XX_Windows-64bit.zip 或者 hugo_X.XX_Windows-32bit。</p>
+<p>这里我建议下载extension版本的，即扩展版，因为后来我看中一个我很喜欢的hugo主题，叫stack，它只能扩展版才能安装。</p>
+<p>然后解压得到hugo.exe，把这玩意放进你的本地建站目录中。比如H:\Hugo。然后打开cmd命令行进入这个目录，输入hugo version查看版本。</p>
+<p>不报错即安装好了。</p>
+<h2 id="二hugo建站">二、hugo建站</h2>
+<h3 id="建立一个名为myblog的网站">建立一个名为myblog的网站：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo --theme=hugo-theme-stack --baseUrl=&#34;https://daisir8.github.io/&#34;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new site myblog
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="三最后的blog使用优化">三、最后的blog使用优化</h2>
-<p>我还是打算用</p>
+</div><p>然后就生成了一个myblog网站文件夹，里面大多数是空的。</p>
+<p>|- archetypes ：存放default.md，头文件格式</p>
+<p>|- content ：content目录存放博客文章（.markdown/.md文件）</p>
+<p>|- data ：存放自定义模版，导入的toml文件（或json，yaml）</p>
+<p>|- layouts ：layouts目录存放的是网站的模板文件</p>
+<p>|- static ：static目录存放js/css/img等静态资源</p>
+<p>|- config.toml ：config.toml是网站的配置文件</p>
+<p>当前网站是没有任何内容的，需要下载个主题跑起来才有内容。</p>
+<h3 id="然后去官网手动下载主题">然后去官网手动下载主题：</h3>
+<p>Hugo官方主题：<a class="link" href="https://link.jianshu.com/?t=https://themes.gohugo.io/"  target="_blank" rel="noopener"
+    >https://themes.gohugo.io/</a></p>
+<p>下载好之后解压到themes文件夹中。</p>
+<p>然后把主题文件夹的archetypes文件夹复制覆盖到自己的建站文件夹中。</p>
+<p>将exampleSite文件夹中的content文件夹和config.yaml复制覆盖到自己的建</p>
+<p>站文件夹中。</p>
+<h2 id="三启动">三、启动</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new post/myblog/01_xxxx.md
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> hugo server 
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这样的语句来创建文章，因为文章有初始信息要生成。</p>
-<p>而且xxxx处直接写文章名字，01就是blog序号，写到99再说。</p>
-<p>而且我打算除了第一个博客，以后的博客都不加封面图片，以求最快的速度加载资源。</p>
+</div><h2 id="四添加评论功能">四、添加评论功能</h2>
+<p>stack自带的disqus在国内用不了。</p>
+<p><strong>LeanCloud是针对移动应用的一站式云端服务</strong></p>
+<p>提供以下服务：</p>
+<ul>
+<li>云引擎服务，加速解析网页内容，比如在线视频网站</li>
+<li>即时通讯</li>
+<li>多人在线游戏对战</li>
+<li>数据存储</li>
+<li>信息推送</li>
+</ul>
+<p>即可以通过这就做出以上自己感兴趣的东西。</p>
+<p>我这次做的是即时通讯模块的实时评论。</p>
+<p><strong>vercel是一家提供静态网站托管的云平台</strong></p>
+<p>即快速的的Github Page，有点像大众那些免费建站的，只要放html进去就行的无脑建站软件。</p>
+<p>你以前也许听说过或用过 Valine。Waline 与它差不多，但管理功能集成在内，并可以更方便地部署。</p>
+<p>如果你使用其他没有 Waline 支持的 Hugo 主题或其他博客系统，按本文部署后可以参考官方文档来<a class="link" href="https://waline.js.org/guide/client/import.html"  target="_blank" rel="noopener"
+    >引入客户端</a>。</p>
+<h3 id="在-leancloud-上部署数据库">在 LeanCloud 上部署数据库</h3>
+<p>注册 LeanCloud 国际版并进入<a class="link" href="https://console.leancloud.app/apps"  target="_blank" rel="noopener"
+    >控制台</a>。</p>
+<p>如果您决定使用 LeanCloud 国内版，您需要为您创建的应用额外绑定已备案的域名。</p>
+<p>创建开发版新应用（随意命名）并复制设置 - 应用凭证中的前三项值，稍后会添加在 Vercel 中的环境变量里。</p>
+<h3 id="在-vercel-上部署服务端">在 Vercel 上部署服务端</h3>
+<p><a class="link" href="https://vercel.com/import/project?template=https://github.com/walinejs/waline/tree/main/example"  target="_blank" rel="noopener"
+    >https://vercel.com/import/project?template=https://github.com/walinejs/waline/tree/main/example</a></p>
+<p>（推荐）使用 GitHub 登录，创建存储库（可以是私有 Repo），跳过创建团队（反正这也不是什么需要团队协作的项目），部署。</p>
+<p>两分钟左右部署就会完成。</p>
+<p>完成部署后在 Settings 中找到 Environment Variables，分别添加三个环境变量 <code>LEAN_ID</code>、<code>LEAN_KEY</code> 和 <code>LEAN_MASTER_KEY</code> 。<code>VALUE</code> 分别填写在 LeanCloud 中获得的 <code>APP ID</code>、<code>APP KEY</code>、和 <code>Master Key</code>。</p>
+<p>记得<a class="link" href="https://ayx.moefox.tech/waline/#%e8%af%84%e8%ae%ba%e7%ae%a1%e7%90%86"  target="_blank" rel="noopener"
+    >注册你的管理员账号</a>，以免被访客注册。第一个注册的用户会得到管理权限。</p>
+<h3 id="在配置文件中配置客户端">在配置文件中配置客户端</h3>
+<p>最后打开站点根目录下的 <code>config.yaml</code>，在 params 下添加以下几行：（如果你当初拷贝了 Stack 提供的 <code>config.yaml</code> 文件，那么这段在第 60 行左右，只需填入 serverURL 即可）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Waline client configuration see: https://waline.js.org/en/reference/client.html
+</span></span><span class="line"><span class="cl">        waline:
+</span></span><span class="line"><span class="cl">            serverURL: https://&lt;PUT_YOUR_OWN_HERE&gt;.vercel.app/
+</span></span><span class="line"><span class="cl">            lang: zh-CN
+</span></span><span class="line"><span class="cl">            visitor: true
+</span></span><span class="line"><span class="cl">            avatar:
+</span></span><span class="line"><span class="cl">            emoji:
+</span></span><span class="line"><span class="cl">                - https://cdn.jsdelivr.net/gh/walinejs/emojis/qq
+</span></span><span class="line"><span class="cl">            requiredMeta:
+</span></span><span class="line"><span class="cl">                - name
+</span></span><span class="line"><span class="cl">                - email
+</span></span><span class="line"><span class="cl">                - url
+</span></span><span class="line"><span class="cl">            placeholder:
+</span></span><span class="line"><span class="cl">            locale:
+</span></span><span class="line"><span class="cl">                admin: Admin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>记得替换 serverURL 为你自己部署的 Vercel App 地址，在<a class="link" href="https://waline.js.org/en/reference/client.html"  target="_blank" rel="noopener"
+    >这里</a>查阅各项参数的含义</p>
+<p>然后可以使用 <code>hugo server</code> 看下效果，使用 Waline 时不会像 disqus 一样在本地预览时屏蔽评论。</p>
+<h3 id="emoji">Emoji</h3>
+<blockquote>
+<p>Waline 提供了一系列开箱即用的表情预设。你可以直接将它们添加到 emoji 选项中:</p>
+<p>Alus</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>哔哩哔哩</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>QQ</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>贴吧</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Twitter Emoji</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>微博</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
 
 </section>
 
@@ -418,7 +570,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/%E6%84%9F%E6%83%B3/">感想</a>
+            <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
         
     </section>
 
@@ -444,51 +596,6 @@
     
 
     
-
-<aside class="related-contents--wrapper">
-    <h2 class="section-title">Related contents</h2>
-    <div class="related-contents">
-        <div class="flex article-list--tile">
-            
-                
-<article class="">
-    <a href="/p/02_%E5%AD%A6%E4%B9%A0%E7%90%86%E8%B4%A2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">02_学习理财</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="">
-    <a href="/p/05_%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0%E5%A5%BD%E7%9A%84%E5%8F%A5%E5%AD%90/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">05_实时更新好的句子</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="">
-    <a href="/p/04_%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0%E5%A5%BD%E7%9A%84%E6%80%9D%E8%B7%AF/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">04_实时更新好的思路</h2>
-        </div>
-    </a>
-</article>
-            
-        </div>
-    </div>
-</aside>
 
      
     
@@ -627,9 +734,22 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#一谈一下这个blog的起源">一、谈一下这个blog的起源</a></li>
-    <li><a href="#二对这个blog的看法">二、对这个blog的看法</a></li>
-    <li><a href="#三最后的blog使用优化">三、最后的blog使用优化</a></li>
+    <li><a href="#一安装hugo">一、安装hugo</a></li>
+    <li><a href="#二hugo建站">二、hugo建站</a>
+      <ol>
+        <li><a href="#建立一个名为myblog的网站">建立一个名为myblog的网站：</a></li>
+        <li><a href="#然后去官网手动下载主题">然后去官网手动下载主题：</a></li>
+      </ol>
+    </li>
+    <li><a href="#三启动">三、启动</a></li>
+    <li><a href="#四添加评论功能">四、添加评论功能</a>
+      <ol>
+        <li><a href="#在-leancloud-上部署数据库">在 LeanCloud 上部署数据库</a></li>
+        <li><a href="#在-vercel-上部署服务端">在 Vercel 上部署服务端</a></li>
+        <li><a href="#在配置文件中配置客户端">在配置文件中配置客户端</a></li>
+        <li><a href="#emoji">Emoji</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
