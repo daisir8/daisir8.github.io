@@ -6,7 +6,185 @@
         <description>Recent content in 技术 on Dai Gang King</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 15 Apr 2022 08:16:04 +0800</lastBuildDate><atom:link href="https://daisir8.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 Apr 2022 19:56:10 +0800</lastBuildDate><atom:link href="https://daisir8.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>06_第一次CTF比赛经验总结</title>
+        <link>https://daisir8.github.io/p/06_%E7%AC%AC%E4%B8%80%E6%AC%A1ctf%E6%AF%94%E8%B5%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Fri, 15 Apr 2022 19:56:10 +0800</pubDate>
+        
+        <guid>https://daisir8.github.io/p/06_%E7%AC%AC%E4%B8%80%E6%AC%A1ctf%E6%AF%94%E8%B5%9B%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/</guid>
+        <description>&lt;h1 id=&#34;一杂项misc&#34;&gt;一、杂项Misc&lt;/h1&gt;
+&lt;p&gt;用Stegsolve分析图片，&lt;/p&gt;
+&lt;p&gt;位置不对的{}flag编码用栅栏解密、克苏鲁词典、颜文字解密用AAEncode、凯撒穷举解密密钥，然后维吉尼亚密码解密，Audacity消除人声，降倍数听电码&lt;/p&gt;
+&lt;p&gt;1.【图片】&lt;/p&gt;
+&lt;p&gt;题目描述：没有题目描述，就一张天气之子的图片。&lt;/p&gt;
+&lt;p&gt;这道题我最喜欢的，出的真棒，做出来很有成就感，是我做题的转折点，从此题开始，我开始用工具解题了，之前都没用工具。&lt;/p&gt;
+&lt;p&gt;Step1：我先用群里分享的工具&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201002176.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201002176&#34;
+	
+	
+&gt;打开这张图片。&lt;/p&gt;
+&lt;p&gt;Step2：开始分析&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201032384.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201032384&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201047633.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201047633&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;密码是一个四位数的纯密码的以zip为后缀名的压缩包。&lt;/p&gt;
+&lt;p&gt;Step3：然后修改图片后缀名，让它成为一个zip压缩包，怀着试一试的心态解压一下，好家伙，果然可以解压。解压之后如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201059275.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201059275&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;那就暴力破解呗，我去网上下了一个暴力解压的软件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201114711.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201114711&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;一下子密码就出来了：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201123115.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201123115&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;是1735。&lt;/p&gt;
+&lt;p&gt;1开头，暴力不了多久。&lt;/p&gt;
+&lt;p&gt;解压之后是这样。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201130404.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201130404&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;当暴力破解后我贼高兴，以为这就解出来了，可是当我点开之后竟然还是音乐字符。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201145444.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201145444&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;没办法，上网搜音乐字符解码方法。&lt;/p&gt;
+&lt;p&gt;到这个网站解密：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201157763.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201157763&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;到这我都奔溃了，竟然还要解密。&lt;/p&gt;
+&lt;p&gt;然后我又去搜密文结尾为等于号=一般是什么加密方法，查到了是base系编码方式。&lt;/p&gt;
+&lt;p&gt;而常见的base64我试过了是乱码，而且网上说base64编码结尾一般只有1or2个等于号=。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201208894.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201208894&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;于是我就又试了一下base32.&lt;/p&gt;
+&lt;p&gt;皇天不负有心人，成功了！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201220099.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201220099&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2.【简单简单超简单】&lt;/p&gt;
+&lt;p&gt;真的是简单简单超简单，有点编程基础就能做出来，而且加密方式也不复杂。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201228716.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201228716&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;密文的产生程序：&lt;/p&gt;
+&lt;p&gt;1.解释一下变量：&lt;/p&gt;
+&lt;p&gt;S为密钥，密码本&lt;/p&gt;
+&lt;p&gt;Sub为原文，要加密的字符串&lt;/p&gt;
+&lt;p&gt;Value为密文。&lt;/p&gt;
+&lt;p&gt;2.开始分析：&lt;/p&gt;
+&lt;p&gt;密文一开始是0，然后遍历sub原文的每个字符，密文等于自己本身*64之后再加上sub的每个字符在s密码本中的位置下标（python中下标从0开始）。然后s这个密码本的长度为：64。&lt;/p&gt;
+&lt;p&gt;所以每次加的数不会超过64。&lt;/p&gt;
+&lt;p&gt;最后把密文以16进制输出，给我们了是{0x12faee4a627}。&lt;/p&gt;
+&lt;p&gt;3.开始解密：&lt;/p&gt;
+&lt;p&gt;按照刚刚分析的思路，我先把密文转为10进制，因为密文是从0开始一点点遍历增加的，所以我们把循环遍历条件设置为value&amp;gt;0。&lt;/p&gt;
+&lt;p&gt;刚刚分析可以知道value为本身*64加上sub在s中的位置下标，且这下标不超过64.&lt;/p&gt;
+&lt;p&gt;不超过这个词在程序员耳中很敏感，一看到就忍不住朝着取余的方向去。&lt;/p&gt;
+&lt;p&gt;所以直接对value取余，根据下标在s密码本本对应找到sub的最后一个字符，然后s整除64，以此类推，继续循环，直到value回到最初的0。&lt;/p&gt;
+&lt;p&gt;注意我们刚刚的解密过程的原文恢复是从最后一个字符开始的，所以它最后我们要倒序输出，才是最后的原文。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://daisir8.github.io/img/06_%e7%ac%ac%e4%b8%80%e6%ac%a1CTF%e6%af%94%e8%b5%9b%e7%bb%8f%e9%aa%8c%e6%80%bb%e7%bb%93.assets/image-20220415201258921.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220415201258921&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Ok。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>03_我的hugo搭建流程</title>
         <link>https://daisir8.github.io/p/03_%E6%88%91%E7%9A%84hugo%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</link>
         <pubDate>Fri, 15 Apr 2022 08:16:04 +0800</pubDate>
